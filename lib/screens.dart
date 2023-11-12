@@ -1,0 +1,1 @@
+export 'package:semana10/card.dart';
