@@ -1,21 +1,31 @@
 import 'package:flutter/material.dart';
 
 class CardType2 extends StatelessWidget {
+
+  final String imageUrl;
+
   const CardType2({
+    required this.imageUrl,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
+    return Card(
       elevation: 10,      
-      child: Column(
-        children: [
-          Image(
-            image: NetworkImage("https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/03/Liga-de-la-Justicia.jpg?fit=1024%2C663&quality=50&strip=all&ssl=1"),
-          ),
-        ],
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
-    );
+      child: ClipRRect(
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
+        child: Column(
+          children: [
+            Image(
+              image: NetworkImage(imageUrl),
+            ),
+          ],
+        ),
+      ),
+    );  
   }
 }
